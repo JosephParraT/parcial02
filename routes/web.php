@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/cliente', [ClienteController::class, 'index'])->name('cliente.index');
 Route::post('/cliente', [ClienteController::class, 'store'])->name('cliente.store');
 Route::get('/cliente/create', [ClienteController::class, 'create'])->name('cliente.create');
+Route::delete('/cliente/{cliente}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
