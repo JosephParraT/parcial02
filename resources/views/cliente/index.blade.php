@@ -12,7 +12,7 @@
   <body>
     <div class = "container">
         <h1>Listado de Clientes</h1>
-        {{-- <a href="{{route('comunas.create')}}" class="btn btn-success">Añadir</a> --}}
+        <a href="{{route('cliente.create')}}" class="btn btn-success">Añadir</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -22,6 +22,7 @@
                         <th scope="col">Telefono</th>
                         <th scope="col">Email</th>
                         <th scope="col">Direccion</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
 {
@@ -26,7 +27,10 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        $clientes = DB::table('clientes')
+        ->orderBy('id')
+        ->get();
+        return view('cliente.new', ['clientes' => $clientes]);
     }
 
     /**
@@ -37,7 +41,14 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $clientes = new Cliente();
+        $clientes -> nombre = $request->name;
+        $clientes -> apellido = $request->ape;
+        $clientes -> telefono = $request->tel;
+        $clientes -> email = $request->email;
+        $clientes -> direccion = $request->dir;
+        $clientes-> save();
+
     }
 
     /**
