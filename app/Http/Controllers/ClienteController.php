@@ -15,11 +15,10 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $clientes = Cliente::all();
-        return view('cliente.index', ['clientes' => $clientes]);
-    }
-
+{
+    $clientes = Cliente::all();
+    return view('cliente.index', ['clientes' => $clientes]);
+}
     /**
      * Show the form for creating a new resource.
      *
@@ -40,16 +39,26 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $clientes = new Cliente();
-        $clientes -> nombre = $request->name;
-        $clientes -> apellido = $request->ape;
-        $clientes -> telefono = $request->tel;
-        $clientes -> email = $request->email;
-        $clientes -> direccion = $request->dir;
-        $clientes-> save();
+{
+    $request->validate([
+        'nombre' => 'required',
+        'apellido' => 'required',
+        'telefono' => 'required',
+        'email' => 'required|email',
+        'direccion' => 'required',
+    ]);
 
-    }
+    $cliente = new Cliente();
+    $cliente->nombre = $request->input('nombre');
+    $cliente->apellido = $request->input('apellido');
+    $cliente->telefono = $request->input('telefono');
+    $cliente->email = $request->input('email');
+    $cliente->direccion = $request->input('direccion');
+    $cliente->save();
+
+    return redirect()->route('cliente.index')->with('success', 'Cliente creado correctamente.');
+}
+
 
     /**
      * Display the specified resource.
@@ -68,10 +77,19 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // public function edit($id)
+    // {
+    //     $clientes = Cliente::find($id)
+    //     ->orderBy('id')
+    //     ->get();
+    //     return view('cliente.edit', ['cliente' => $clientes]);
+    // }
+
     public function edit($id)
-    {
-        //
-    }
+{
+    $cliente = Cliente::find($id);
+    return view('cliente.edit', compact('cliente'));
+}
 
     /**
      * Update the specified resource in storage.
@@ -81,9 +99,30 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
-    }
+{
+    $request->validate([
+        'nombre' => 'required',
+        'apellido' => 'required',
+        'telefono' => 'required',
+        'email' => 'required|email',
+        'direccion' => 'required',
+    ]);
+
+    $cliente = Cliente::find($id);
+
+    $cliente->nombre = $request->input('nombre');
+    $cliente->apellido = $request->input('apellido');
+    $cliente->telefono = $request->input('telefono');
+    $cliente->email = $request->input('email');
+    $cliente->direccion = $request->input('direccion');
+    $cliente->save();
+
+    $clientes = DB::table('clientes')->get();
+
+    return view('cliente.index', ['clientes' => $clientes]);
+
+}
+
 
     /**
      * Remove the specified resource from storage.

@@ -34,9 +34,9 @@
                         <td>{{ $clientes->telefono }}</td>
                         <td>{{ $clientes->email }}</td>
                         <td>{{ $clientes->direccion }}</td>
-
                         <td>
-                            {{-- <a href="{{ route('comunas.edit', ['id' => $comuna->comu_codi]) }}" class="btn btn-info">Editar</a> --}}
+                            <a href="{{ route('cliente.edit', ['cliente' => $clientes->id]) }}" class="btn btn-info">Editar</a>
+
                             <form action="{{ route('cliente.destroy', ['cliente' => $clientes->id]) }}" method="POST" style="display: inline-block">
                                 @method('delete')
                                 @csrf

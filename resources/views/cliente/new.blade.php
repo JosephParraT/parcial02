@@ -23,47 +23,33 @@
 
         <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
-            name="name" placeholder="Nombre Cliente">
-          </div>
+            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="nombre" placeholder="Nombre Cliente">
+        </div>
 
-          <div class="mb-3">
+        <div class="mb-3">
             <label for="ape" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="ape" aria-describedby="nameHelp"
-            name="name" placeholder="Apellido Cliente">
-          </div>
+            <input type="text" class="form-control" id="ape" aria-describedby="nameHelp" name="apellido" placeholder="Apellido Cliente">
+        </div>
 
-          <div class="mb-3">
-            <label for="tel" class="form-label">Telefono</label>
-            <input type="text" class="form-control" id="tel" aria-describedby="nameHelp"
-            name="name" placeholder="Telefono">
-          </div>
+        <div class="mb-3">
+            <label for="tel" class="form-label">Teléfono</label>
+            <input type="text" class="form-control" id="tel" aria-describedby="nameHelp" name="telefono" placeholder="Teléfono">
+        </div>
 
-          <div class="mb-3">
+        <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="text" class="form-control" id="email" aria-describedby="nameHelp"
-            name="name" placeholder="Email">
-          </div>
+            <input type="text" class="form-control" id="email" aria-describedby="nameHelp" name="email" placeholder="Email">
+        </div>
 
-          <div class="mb-3">
-            <label for="dir" class="form-label">Direccion</label>
-            <input type="text" class="form-control" id="dir" aria-describedby="nameHelp"
-            name="name" placeholder="Direccion">
-          </div>
+        <div class="mb-3">
+            <label for="dir" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="dir" aria-describedby="nameHelp" name="direccion" placeholder="Dirección">
+        </div>
 
-        {{-- <label for="municipality">Telefono</label>
-        <select  class="form-select" id="municipality" name="ape" required>
-            <option selected disabled value="">Elige uno...</option>
-            @foreach ($minicipios as $municipio)
-            <option value="{{$municipio->muni_codi}}">{{$municipio->muni_nomb}}</option>
-            @endforeach
-        </select> --}}
-
-       <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="{{route("cliente.index")}}" class="btn btn-warning">Cancelar</a>
-       </div>
-      </form>
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="{{route("cliente.index")}}" class="btn btn-warning">Cancelar</a>
+        </div>
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
