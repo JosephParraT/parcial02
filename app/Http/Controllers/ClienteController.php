@@ -131,10 +131,11 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        $clientes = Cliente::find($id);
-        $clientes->delete();
+{
+    $cliente = Cliente::find($id);
+    $cliente->delete();
 
-        return view('cliente.index', ['clientes' => $clientes]);
-    }
+    return redirect()->route('cliente.index');
+}
+
 }
