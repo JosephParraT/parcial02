@@ -119,7 +119,9 @@ class ClienteController extends Controller
 
     $clientes = DB::table('clientes')->get();
 
-    return view('cliente.index', ['clientes' => $clientes]);}
+    return view('cliente.index', ['clientes' => $clientes]);
+
+}
     /**
      * Remove the specified resource from storage.
      *
