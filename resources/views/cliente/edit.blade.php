@@ -14,33 +14,39 @@
             @csrf
             <div class="mb-3">
                 <label for="codigo" class="form-label">ID</label>
-                <input type="text" class="form-control" id="codigo" aria-describedby="codigoHelp" name="id" disabled value="{{ $cliente->id }}">
+                <input type="text" class="form-control" id="codigo" aria-describedby="codigoHelp" name="id"
+                disabled value="{{ $cliente->id }}">
                 <div id="codigoHelp" class="form-text">ID del cliente</div>
             </div>
 
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="name" placeholder="Nombre del cliente" name="nombre" value="{{ $cliente->nombre }}" required>
+                <input type="text" class="form-control" id="name" placeholder="Nombre del cliente" name="nombre"
+                value="{{ $cliente->nombre }}" required>
             </div>
 
             <div class="mb-3">
                 <label for="ape" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="ape" placeholder="Apellido del cliente" name="apellido" value="{{ $cliente->apellido }}" required>
+                <input type="text" class="form-control" id="ape" placeholder="Apellido del cliente" name="apellido"
+                value="{{ $cliente->apellido }}" required>
             </div>
 
             <div class="mb-3">
                 <label for="tel" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" id="tel" placeholder="Teléfono del cliente" name="telefono" value="{{ $cliente->telefono }}" required>
+                <input type="text" class="form-control" id="tel" placeholder="Teléfono del cliente" name="telefono"
+                value="{{ $cliente->telefono }}" required>
             </div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" id="email" placeholder="Email del cliente" name="email" value="{{ $cliente->email }}" required>
+                <input type="text" class="form-control" id="email" placeholder="Email del cliente" name="email"
+                value="{{ $cliente->email }}" required>
             </div>
 
             <div class="mb-3">
                 <label for="dir" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="dir" placeholder="Dirección del cliente" name="direccion" value="{{ $cliente->direccion }}" required>
+                <input type="text" class="form-control" id="dir" placeholder="Dirección del cliente" name="direccion"
+                value="{{ $cliente->direccion }}" required>
             </div>
 
             <div class="mt-3">
