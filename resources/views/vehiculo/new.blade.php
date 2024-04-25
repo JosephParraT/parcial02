@@ -18,7 +18,7 @@
         <div class="mb-3">
           <label for="id" class="form-label">ID</label>
           <input type="text" class="form-control" id="id" aria-describedby="idHelp" name="id" disabled="disabled">
-          <div id="idHelp" class="form-text">Codigo Vehiculo</div>
+          <div id="id" class="form-text">Codigo Vehiculo</div>
         </div>
 
         <div class="mb-3">
